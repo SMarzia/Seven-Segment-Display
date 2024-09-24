@@ -1,0 +1,111 @@
+// Pin assignments for the segments
+const int a = 2;
+const int b = 3;
+const int c = 4;
+const int d = 5;
+const int e = 6;
+const int f = 7;
+const int g = 8;
+
+void setup() {
+  // Set all the pins to OUTPUT
+  pinMode(a, OUTPUT);
+  pinMode(b, OUTPUT);
+  pinMode(c, OUTPUT);
+  pinMode(d, OUTPUT);
+  pinMode(e, OUTPUT);
+  pinMode(f, OUTPUT);
+  pinMode(g, OUTPUT);
+}
+
+void loop() {
+  // Display digits 0-9
+  for (int num = 0; num < 10; num++) {
+    displayDigit(num);
+    delay(1000); // Wait for a second before showing the next number
+  }
+}
+
+void displayDigit(int num) {
+  // Turn off all segments
+  digitalWrite(a, LOW);
+  digitalWrite(b, LOW);
+  digitalWrite(c, LOW);
+  digitalWrite(d, LOW);
+  digitalWrite(e, LOW);
+  digitalWrite(f, LOW);
+  digitalWrite(g, LOW);
+
+  // Turn on segments based on the digit to display
+  switch (num) {
+    case 0:
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, HIGH);
+      break;
+    case 1:
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      break;
+    case 2:
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, HIGH);
+      digitalWrite(g, HIGH);
+      break;
+    case 3:
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(g, HIGH);
+      break;
+    case 4:
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+      break;
+    case 5:
+      digitalWrite(a, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+      break;
+    case 6:
+      digitalWrite(a, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+      break;
+    case 7:
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      break;
+    case 8:
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+      break;
+    case 9:
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+      break;
+  }
+}
