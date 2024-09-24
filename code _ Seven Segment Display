@@ -1,4 +1,4 @@
-// Pin assignments for the segments
+ // Pin assignments for the segments
 const int a = 2;
 const int b = 3;
 const int c = 4;
